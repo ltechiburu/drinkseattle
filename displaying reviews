@@ -1,0 +1,120 @@
+// Initial sorting
+    sortBars();
+
+    function sortBars() {Initial sorting
+    sortBars();
+
+    function sortBars() {
+      const sortOption = document.getElementById("sortOptions").value;
+
+      if (sortOption === "rating") {
+        // Sort bars by rating
+        bars.sort((a, b) => b.rating - a.rating);
+      } else if (sortOption === "neighborhood") {
+        // Sort bars alphabetically by neighborhood
+        bars.sort((a, b) => a.neighborhood.localeCompare(b.neighborhood));
+      }
+
+      // Display sorted bars
+      displayBars();
+    }
+
+    function displayBars() {
+      const barsContainer = document.getElementById("barsContainer");
+      barsContainer.innerHTML = ""; // Clear previous content
+
+      // Display bars
+      bars.forEach(bar => {
+        const barElement = document.createElement("div");
+        barElement.classList.add("bar-info");
+
+        barElement.innerHTML = `<div class="bar-name">${bar.name} - <span class="neighborhood">${bar.neighborhood}</span></div>`;
+        barsContainer.appendChild(barElement);
+
+        const ratingElement = document.createElement("div");
+      ratingElement.innerHTML = `${getRatingStars(bar.rating)} <span class="toggle-review" onclick="toggleReview(this)">Show review</span>`;
+      barsContainer.appendChild(ratingElement);
+
+      const descriptionElement = document.createElement("div");
+      descriptionElement.classList.add("description");
+      descriptionElement.innerHTML = `${bar.description}`;
+      barsContainer.appendChild(descriptionElement);
+
+      const hrElement = document.createElement("hr");
+      barsContainer.appendChild(hrElement);
+    });
+  }
+
+
+
+  function toggleAllReviews() {
+    const showAllCheckbox = document.getElementById('showAllReviews');
+    const reviews = document.getElementsByClassName('review');
+
+    for (let i = 0; i < reviews.length; i++) {
+      const review = reviews[i];
+      if (showAllCheckbox.checked) {
+        // If "Show all reviews" is checked, show all reviews
+        review.style.display = 'block';
+      } else {
+        // If unchecked, hide individual reviews based on their visibility state
+        const isVisible = window.getComputedStyle(review).display !== 'none';
+        if (!isVisible) {
+          review.style.display = 'none';
+        }
+      }
+    }
+  }
+
+    // Helper function to get star ratings
+    function getRatingStars(rating) {
+      const fullStars = "★".repeat(Math.floor(rating));
+      const halfStar = (rating % 1 !== 0) ? "½" : "";
+      return `${fullStars}${halfStar}`;
+    }
+     // Function to toggle reviews
+   function toggleReview(element) {
+    const reviewElement = element.nextElementSibling;
+    reviewElement.style.display = reviewElement.style.display === "none" || reviewElement.style.display === "" ? "block" : "none";
+  }
+      function toggleAllReviews() {
+      const showAllReviewsCheckbox = document.getElementById("showAllReviews");
+      const reviewElements = document.querySelectorAll(".review");
+
+      reviewElements.forEach(reviewElement => {
+        if (showAllReviewsCheckbox.checked) {
+          reviewElement.style.display = "block";
+        } else {
+          reviewElement.style.display = "none";
+        }
+      });
+    }
+
+
+function displayBars() {
+    const barsContainer = document.getElementById("barsContainer");
+    barsContainer.innerHTML = ""; // Clear previous content
+
+    // Display bars
+    bars.forEach((bar, index) => {
+      const barElement = document.createElement("div");
+      barElement.classList.add("bar-info");
+
+      barElement.innerHTML = `<div class="bar-name">${bar.name} - <span class="neighborhood">${bar.neighborhood}</span></div>`;
+      barsContainer.appendChild(barElement);
+
+      const descriptionElement = document.createElement("div");
+      descriptionElement.classList.add("description");
+
+      const reviewText = `<span class="review-toggle" onclick="toggleReview(this)" onmouseover="this.style.color='maroon'" onmouseout="this.style.color=''">Toggle review</span>`;
+
+      descriptionElement.innerHTML = `${getRatingStars(bar.rating)}&nbsp;&nbsp;${reviewText}<div class="review" style="display:none" id="review-${index}">${bar.description}</div>`;
+      barsContainer.appendChild(descriptionElement);
+
+      const hrElement = document.createElement("hr");
+      barsContainer.appendChild(hrElement);
+    });
+  }
+</script>
+</body>
+</html>
