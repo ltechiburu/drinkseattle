@@ -1,0 +1,21 @@
+// Function to add markers with info windows
+function addMarker(map, latitude, longitude, neighborhood, barName, rating, description) {
+  var markerIcon = getMarkerIcon(rating);
+
+  var marker = new google.maps.Marker({
+    position: { lat: latitude, lng: longitude },
+    map: map,
+    title: barName,
+    icon: markerIcon
+  });
+
+  var infowindow = new google.maps.InfoWindow({
+    content: '<div style="font-size:16px;"><strong>' + barName + '</strong> - <em>' + neighborhood + '</em></div>' +
+      '<div style="font-size:18px;">Rating: ' + rating + '</div>' +
+      '<div style="font-size:14px;">' + description + '</div>'
+  });
+
+  marker.addListener('click', function () {
+    infowindow.open(map, marker);
+  });
+}
