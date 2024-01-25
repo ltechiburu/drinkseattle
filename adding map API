@@ -1,0 +1,31 @@
+
+<!-- Include the Google Maps API with your API key -->
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDS9EmKPBq8kLzNHkv1QE4ERosIpxn0SpQ&callback=initMap"
+  onerror="handleError()">
+</script>
+
+<script>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Google Maps Page</title>
+  <style>
+    /* Add any custom styles for your map container if needed */
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Add a container for your map -->
+<div id="map"></div>
+
+
+</script>
+
+<script>
