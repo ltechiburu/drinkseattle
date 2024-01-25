@@ -54,3 +54,32 @@
     }
   </style>
 </head>
+<body>
+
+  <!-- Toolbar for sorting and future filtering options -->
+<div class="toolbar">
+    <label for="sortOptions">Sort By:</label>
+    <select id="sortOptions" onchange="sortBars()">
+      <option value="rating">Rating</option>
+      <option value="neighborhood">Neighborhood</option>
+    </select>
+    <!-- Checkbox for Show all reviews -->
+    <input type="checkbox" id="showAllReviews" onchange="toggleAllReviews()">
+    <label for="showAllReviews">Show all reviews</label>
+
+    <!-- Add space for future filtering options here -->
+  </div>
+
+  <!-- Add the style directly within the body section -->
+  <style>
+    #sortOptions option[value="rating"],
+    #sortOptions option[value="neighborhood"] {
+      color: black; /* Change this to the color you desire */
+    }
+  </style>
+
+
+  <!-- Container for displaying bars -->
+  <div id="barsContainer"></div>
+
+  <script>
