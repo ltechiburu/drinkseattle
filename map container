@@ -7,7 +7,7 @@
   <style>
     /* Add any custom styles for your map container if needed */
  #map {
-  background: linear-gradient(135deg, #ff6b6b, #ffa07a, #f5f5dc); /* Gradient with vibrant colors */
+  background: #000080; /* Deep Blue Color */
   border: 3px solid #800000; /* Maroon outline for contrast */
   border-radius: 25px; /* Larger border radius for a unique shape */
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Stronger box shadow for depth */
