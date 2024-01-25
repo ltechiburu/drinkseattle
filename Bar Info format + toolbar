@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bar Information</title>
+  <style>
+    /* Add any additional styles as needed */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background-color: #f5f5f5; /* Light gray background */
+    }
+
+    /* Style for toolbar */
+    .toolbar {
+      background-color: #800000; /* Maroon background */
+      color: #ffffff; /* White text */
+      padding: 10px;
+      text-align: right;
+      border-radius: 15px; /* Add border-radius for rounded corners */
+
+    }
+
+    label {
+      display: inline-block;
+      margin-right: 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    select {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    /* Style for bar names */
+    .bar-name {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    /* Style for neighborhood names */
+    .neighborhood {
+      font-size: 16px;
+      font-style: italic;
+    }
+
+    /* Style for additional description text */
+    .description {
+      font-size: 16px;
+    }
+  </style>
+</head>
