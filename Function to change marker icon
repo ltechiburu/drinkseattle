@@ -1,0 +1,11 @@
+// Function to get marker icon based on rating
+function getMarkerIcon(rating) {
+  // Extract numeric rating from the string, considering the unicode character for half-star
+  var starRating = parseFloat(rating.replace(/&#189;/, '.5').split(' ')[1]);
+
+  if (!isNaN(starRating) && starRating >= 4) {
+    return 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'; // Purple marker for >= 4 stars
+  } else {
+    return 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'; // Default red marker for < 4 stars
+  }
+}
